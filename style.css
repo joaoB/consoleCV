@@ -1,8 +1,18 @@
 #cmd{
-    width:750px;
-    height:300px;
-    background:black;
 	color:white;
 	font-family: "trebuchet ms", verdana, helvetica, arial, sans-serif;
+}
+
+#containerSmall{
+	width:730px;
+    height:280px;
+	overflow: hidden;	
 	margin: auto;
+	background:black;
+}
+
+.cmdSize{
+	width:750px;
+    height:300px;
+	overflow: auto;
 }

@@ -3,9 +3,10 @@ window.onload = function(e){
 	$('#input').focus();	
 	$('#input').keyup(function(e){
 		var k = e.which;
+		var command = $('#input').val(); 
+				
 		switch(k){
 			case 13:
-				var command = $('#input').val(); 
 				handleEnter(command);
 				break;
 			case 38: //key up
@@ -15,7 +16,7 @@ window.onload = function(e){
 				handleKeyDown();
 				break;
 			default:
-				fillFake($('#input').val());
+				fillFake(command);
 		}
     });
 }
@@ -30,6 +31,8 @@ var handleEnter = function(command){
 	var o = $('#container').html();
 	$('#container').html( o + '> ' + command + '<br>');
 	cleanInput();
+	generateRespose();
+	$('#containerSmall').scrollTop($('#containerSmall')[0].scrollHeight); //scroll down
 }
 
 var commandHistory = [];
@@ -57,4 +60,14 @@ var handleKeyDown = function(){
 
 var fillFake = function(command){
 	$('#fake').html('> ' + command);
+}
+
+var brunoSays = function(command){
+	var o = $('#container').html();
+	$('#container').html( o + ' bruno > ' + command + '<br>');
+}
+
+var generateRespose = function(){
+	var response = 'auto response';
+	brunoSays(response);
 }
