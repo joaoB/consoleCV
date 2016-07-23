@@ -25,13 +25,14 @@ $('#cmd').click(function(){
 	$('#input').focus();
 });
 
+var bot;
 var handleEnter = function(command){
 	addToHistory(command);
 	index = commandHistory.length;
 	var o = $('#container').html();
 	$('#container').html( o + '> ' + command + '<br>');
 	cleanInput();
-	generateRespose();
+	generateRespose(command);
 	$('#containerSmall').scrollTop($('#containerSmall')[0].scrollHeight); //scroll down
 }
 
@@ -67,7 +68,33 @@ var brunoSays = function(command){
 	$('#container').html( o + ' bruno > ' + command + '<br>');
 }
 
-var generateRespose = function(){
-	var response = 'auto response';
-	brunoSays(response);
+
+var help;
+var about = 'Hi, I am Bruno! ';
+
+
+var knownCommands = [];
+var generateRespose = function(command){
+	if (knownCommands[command]){
+		//inject predefined answer
+	}
+	else {
+		//call bot
+		console.log('here');
+		console.log(getBot());
+		getBot().ask(command, function (err, response) {
+			brunoSays(response);
+			$('#containerSmall').scrollTop($('#containerSmall')[0].scrollHeight); //scroll down
+		});
+	}
+}
+
+var getBot = function(){
+	if (!bot){
+		//api keys are free.. you can get your own @ cleverbot.io :)
+		bot = new cleverbot('8KnVGyw6d60ozKSG','XTqKEb5NxbfKl7RreSs3sOwmiuTdIXfv');
+		bot.setNick("brunobot")
+		bot.create(function (err, session) {});
+	}
+	return bot;
 }
