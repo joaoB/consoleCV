@@ -21,7 +21,7 @@ window.onload = function(e){
     });
 }
 
-$('#cmd').click(function(){
+$('#cmd, #containerSmall').click(function(){
 	$('#input').focus();
 });
 
@@ -69,19 +69,18 @@ var brunoSays = function(command){
 }
 
 
-var help;
-var about = 'Hi, I am Bruno! ';
+var help = '<br>help -> shows this information <br> about -> shows information about me';
+var about = 'Hi, I am Bruno! A software engineer with a passion for full stack development.';
 
 
-var knownCommands = [];
+var knownCommands = {help : help, about : about};
 var generateRespose = function(command){
 	if (knownCommands[command]){
 		//inject predefined answer
+		brunoSays(knownCommands[command]);
 	}
 	else {
 		//call bot
-		console.log('here');
-		console.log(getBot());
 		getBot().ask(command, function (err, response) {
 			brunoSays(response);
 			$('#containerSmall').scrollTop($('#containerSmall')[0].scrollHeight); //scroll down

@@ -12,6 +12,10 @@
 	background:black;
 }
 
+#input {
+	margin-left: -500px;
+}
+
 .cmdSize{
 	width:680px;
     height:280px;
