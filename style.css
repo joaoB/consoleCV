@@ -1,10 +1,10 @@
-#cmd{
+#containerSmall{
 	color:white;
 	font-family: "trebuchet ms", verdana, helvetica, arial, sans-serif;
 	font-size: 	13px;
 }
 
-#containerSmall{
+#cmd{
 	width:650px;
     height:260px;
 	overflow: hidden;	
@@ -20,4 +20,10 @@
 	width:680px;
     height:280px;
 	overflow: auto;
+}
+
+#message{
+	text-align: center;
+	font-family: "trebuchet ms", verdana, helvetica, arial, sans-serif;
+	display: none;
 }

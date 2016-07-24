@@ -21,14 +21,14 @@ window.onload = function(e){
     });
 }
 
-$('#cmd, #containerSmall').click(function(){
+$('#containerSmall, #cmd').click(function(){
 	$('#input').focus();
 });
 
 var bot;
 var handleEnter = function(command){
 	if (command.toLowerCase() == 'quit'){
-		quit();
+		return quit();
 	}
 	addToHistory(command);
 	index = commandHistory.length;
@@ -36,7 +36,7 @@ var handleEnter = function(command){
 	$('#container').html( o + '> ' + command + '<br>');
 	cleanInput();
 	generateRespose(command);
-	$('#containerSmall').scrollTop($('#containerSmall')[0].scrollHeight); //scroll down
+	$('#cmd').scrollTop($('#cmd')[0].scrollHeight); //scroll down
 }
 
 var commandHistory = [];
@@ -74,21 +74,29 @@ var brunoSays = function(command){
 
 var help = '<br>help -> shows this information <br>\
 			about -> shows information about me <br>\
-			quit -> leaves this page <br>\
+			quit -> closes the console <br>\
 			anything else -> chat with an amazing bot!';
 			
 			
 var about = 'Hi, I am Bruno! A software engineer with a passion for full stack development. <br> \
+			I consider myself a self motivated person, fast learner with a passionate attitude with the desire to keep moving things forward.<br>\
 			I\'ve worked with: <br> \
-			Node JS, TypeScript, mongoDB, nginx <br>\
+			Node JS, TypeScript, MongoDB, nginx, CSS <br>\
 			Scala, PlayFramework, Slick, Amazon AWS, PostgreSQL <br>\
+			Version control: GitHub, Bitbucket, SVN <br> \
 			Some fun projects using: <br>\
-			RoR, Symfony2';
+			RoR, Symfony2<br>\
+			<br>\
+			Contact me: silva.joaobruno@gmail.com';
 
 
 var quit = function(){
+	cleanInput();
 	brunoSays('Goodbye!');
-	$('#containerSmall').hide();
+	setTimeout(() => {
+		$('#message').show();
+		$('#cmd').hide(); }
+	, 750);
 }
 			
 var knownCommands = {help : help, about : about};
@@ -101,7 +109,7 @@ var generateRespose = function(command){
 		//call bot
 		getBot().ask(command, function (err, response) {
 			brunoSays(response);
-			$('#containerSmall').scrollTop($('#containerSmall')[0].scrollHeight); //scroll down
+			$('#cmd').scrollTop($('#cmd')[0].scrollHeight); //scroll down
 		});
 	}
 }
