@@ -27,6 +27,9 @@ $('#cmd, #containerSmall').click(function(){
 
 var bot;
 var handleEnter = function(command){
+	if (command.toLowerCase() == 'quit'){
+		quit();
+	}
 	addToHistory(command);
 	index = commandHistory.length;
 	var o = $('#container').html();
@@ -69,10 +72,25 @@ var brunoSays = function(command){
 }
 
 
-var help = '<br>help -> shows this information <br> about -> shows information about me';
-var about = 'Hi, I am Bruno! A software engineer with a passion for full stack development.';
+var help = '<br>help -> shows this information <br>\
+			about -> shows information about me <br>\
+			quit -> leaves this page <br>\
+			anything else -> chat with an amazing bot!';
+			
+			
+var about = 'Hi, I am Bruno! A software engineer with a passion for full stack development. <br> \
+			I\'ve worked with: <br> \
+			Node JS, TypeScript, mongoDB, nginx <br>\
+			Scala, PlayFramework, Slick, Amazon AWS, PostgreSQL <br>\
+			Some fun projects using: <br>\
+			RoR, Symfony2';
 
 
+var quit = function(){
+	brunoSays('Goodbye!');
+	$('#containerSmall').hide();
+}
+			
 var knownCommands = {help : help, about : about};
 var generateRespose = function(command){
 	if (knownCommands[command]){
