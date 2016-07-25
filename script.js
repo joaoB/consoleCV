@@ -79,7 +79,7 @@ var help = '<br>help -> shows this information <br>\
 			
 			
 var about = 'Hi, I am Bruno! A software engineer with a passion for full stack development. <br> \
-			I consider myself a self motivated person, fast learner with a passionate attitude with the desire to keep moving things forward.<br>\
+			I consider myself a self motivated person who is a fast learner with a passionate attitude and the desire to keep moving things forward. <br> \
 			I\'ve worked with: <br> \
 			Node JS, TypeScript, MongoDB, nginx, CSS <br>\
 			Scala, PlayFramework, Slick, Amazon AWS, PostgreSQL <br>\
