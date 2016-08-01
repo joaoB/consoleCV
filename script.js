@@ -95,7 +95,7 @@ var quit = function(){
 	brunoSays('Goodbye!');
 	setTimeout(() => {
 		$('#message').show();
-		$('#cmd').hide(); }
+		$('#header').hide(); }
 	, 750);
 }
 			
