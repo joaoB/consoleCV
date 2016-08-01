@@ -12,6 +12,61 @@
 	background:black;
 }
 
+.right{
+	float: right;
+}
+
+.blackText{
+	color: black;
+	padding-left: 10px;
+}
+
+
+.upABit{
+	margin-top: -7px;
+	font-size: 20px;
+}
+
+#maximize{
+	
+}
+
+#minimize{
+	
+}
+
+.grayIcon:hover{
+	background-color: rgb(229, 229, 229);
+}
+
+.redIcon:hover{
+	background-color: rgb(232, 17, 35);
+	color: white;
+}
+
+.icon{
+	width: 20px;
+	text-align: center;
+	color: black;
+}
+
+
+#smallSquare{
+	width:8px;
+    height: 8px;	
+	border: 1px solid;
+}
+
+#header{
+	font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+	font-size: 13px;
+	width:650px;
+    height: 278px;	
+	margin: auto;
+	border: 1px solid;
+	color: rgb(24,131,215);
+}
+
 #input {
 	margin-left: -500px;
 }

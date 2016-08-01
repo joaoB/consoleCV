@@ -82,7 +82,7 @@ var about = 'Hi, I am Bruno! A software engineer with a passion for full stack d
 			I consider myself a self motivated person who is a fast learner with a passionate attitude and the desire to keep moving things forward. <br> \
 			I\'ve worked with: <br> \
 			Node JS, TypeScript, MongoDB, nginx, CSS <br>\
-			Scala, PlayFramework, Slick, Amazon AWS, PostgreSQL <br>\
+			Scala, PlayFramework, Slick, AWS, PostgreSQL <br>\
 			Version control: GitHub, Bitbucket, SVN <br> \
 			Some fun projects using: <br>\
 			RoR, Symfony2<br>\
