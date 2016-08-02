@@ -21,6 +21,41 @@ window.onload = function(e){
     });
 }
 
+$('#close').click(function(){
+	quit();
+});
+
+var maxed = false;
+$('#maximize').click(function(){
+	if(!maxed){
+		$("#header").css("width", "100%"); 
+		$("#cmd").css("width", "100%"); 
+		$("#cmd").css("height", $(document).height() - 60); 
+		$("#header").css("height", $(document).height() - 60); 
+	} else{
+		cleanAttrs();
+	}
+	maxed = !maxed;
+	
+});
+
+var mined = false;
+$('#minimize').click(function(){
+	if(!mined){
+		$("#header").css("height", "20"); 
+		$("#cmd").css("height", 0); 
+	} else{
+		cleanAttrs();
+	}
+	mined = !mined;
+	
+});
+
+var cleanAttrs = function(){
+	$("#header").removeAttr( 'style' );
+	$("#cmd").removeAttr( 'style' );
+}
+
 $('#containerSmall, #cmd').click(function(){
 	$('#input').focus();
 });
