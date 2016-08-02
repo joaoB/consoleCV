@@ -28,10 +28,9 @@ $('#close').click(function(){
 var maxed = false;
 $('#maximize').click(function(){
 	if(!maxed){
-		$("#header").css("width", "100%"); 
-		$("#cmd").css("width", "100%"); 
+		$("#header, #cmd").css("width", "100%"); 
 		$("#cmd").css("height", $(document).height() - 60); 
-		$("#header").css("height", $(document).height() - 60); 
+		$("#header").css("height", $(document).height() - 40);
 	} else{
 		cleanAttrs();
 	}
@@ -43,9 +42,10 @@ var mined = false;
 $('#minimize').click(function(){
 	if(!mined){
 		$("#header").css("height", "20"); 
-		$("#cmd").css("height", 0); 
+		$("#cmd").css("height", 0);
 	} else{
-		cleanAttrs();
+		$("#cmd").css("height", maxed ? $(document).height() - 60 : ''); 
+		$("#header").css("height", '');
 	}
 	mined = !mined;
 	

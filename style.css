@@ -27,13 +27,6 @@
 	font-size: 20px;
 }
 
-#maximize{
-	
-}
-
-#minimize{
-	
-}
 
 .grayIcon:hover{
 	background-color: rgb(229, 229, 229);
@@ -60,7 +53,7 @@
 	font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
 	font-size: 13px;
 	width:650px;
-    height: 278px;	
+    height: 280px;	
 	margin: auto;
 	border: 1px solid;
 	color: rgb(24,131,215);
